@@ -13,7 +13,7 @@ class CategorieListView extends StatelessWidget {
     CategorieModel(image: 'assets/general.jpg', categorieName: 'General'),
     CategorieModel(image: 'assets/health.jpg', categorieName: 'Health'),
     CategorieModel(image: 'assets/science.jpg', categorieName: 'Science'),
-    CategorieModel(image: 'assets/technology.jpg', categorieName: 'Technology'),
+    CategorieModel(image: 'assets/technology.jpeg', categorieName: 'Technology'),
   ];
   @override
   Widget build(BuildContext context) {
