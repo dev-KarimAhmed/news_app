@@ -7,13 +7,15 @@ class CategorieListView extends StatelessWidget {
   const CategorieListView({
     super.key,
   });
-  final List<CategorieModel> categorieList = const[
+  final List<CategorieModel> categorieList = const [
     CategorieModel(image: 'assets/business.jpg', categorieName: 'Business'),
-    CategorieModel(image: 'assets/entertainment.jpg', categorieName: 'Entertainment'),
-    CategorieModel(image: 'assets/general.jpg', categorieName: 'General'),
+    CategorieModel(
+        image: 'assets/entertainment.jpg', categorieName: 'Entertainment'),
     CategorieModel(image: 'assets/health.jpg', categorieName: 'Health'),
     CategorieModel(image: 'assets/science.jpg', categorieName: 'Science'),
-    CategorieModel(image: 'assets/technology.jpeg', categorieName: 'Technology'),
+    CategorieModel(
+        image: 'assets/technology.jpeg', categorieName: 'Technology'),
+    CategorieModel(image: 'assets/general.jpg', categorieName: 'General'),
   ];
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,9 @@ class CategorieListView extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemCount: categorieList.length,
           itemBuilder: ((context, index) {
-            return CategorieCard(categorieModel: categorieList[index],);
+            return CategorieCard(
+              categorieModel: categorieList[index],
+            );
           })),
     );
   }
