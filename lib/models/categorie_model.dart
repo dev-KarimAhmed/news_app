@@ -1,5 +1,5 @@
-class git push --force origin main
- {
+class CategorieModel {
+  
   final String image;
   final String categorieName;
 
