@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/models/articles_model.dart';
 
 class NewsTile extends StatelessWidget {
-  const NewsTile({super.key});
+  const NewsTile({super.key, required this.article});
+  final ArticlesModel article;
 
   @override
   Widget build(BuildContext context) {
@@ -10,9 +12,10 @@ class NewsTile extends StatelessWidget {
       child: Column(
         children: [
           Image.network(
-              'https://jobs.newscientist.com/getasset/1280cb5f-35ad-4fa2-a6b5-df17e4703099/'),
+              article.image??'https://media.istockphoto.com/id/1335247217/vector/loading-icon-vector-illustration.jpg?s=612x612&w=0&k=20&c=jARr4Alv-d5U3bCa8eixuX2593e1rDiiWnvJLgHCkQM='
+              ),
           Text(
-            'I\'m a student at faculty of Science , I\'m a student at faculty of Science ,I\'m a student at faculty of Science ,',
+            article.title??'Title',
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
@@ -21,7 +24,7 @@ class NewsTile extends StatelessWidget {
             ),
           ),
           Text(
-            'I\'m a student at faculty of Science , I\'m a student at faculty of Science ,I\'m a student at faculty of Science ,I\'m a student at faculty of Science ,I\'m a student at faculty of Science ,I\'m a student at faculty of Science ,I\'m a student at faculty of Science ,I\'m a student at faculty of Science ,I\'m a student at faculty of Science ,',
+            article.subTitle??'',
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
