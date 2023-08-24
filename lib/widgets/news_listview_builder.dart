@@ -14,7 +14,7 @@ class NewsListViewBuilder extends StatefulWidget {
 
 class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
   List<ArticlesModel> articles = [];
-   bool isLoading = true;
+  bool isLoading = true;
   @override
   void initState() {
     getNews();
@@ -30,6 +30,15 @@ class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
 
   @override
   Widget build(BuildContext context) {
-    return isLoading ? SliverToBoxAdapter(child: Center(child: CircularProgressIndicator(),),) : NewsListView(articles: articles);
+    return isLoading
+        ? SliverToBoxAdapter(
+            child: Center(
+              child: CircularProgressIndicator(),
+            ),
+          )
+        : articles.isNotEmpty
+            ? NewsListView(articles: articles)
+            : SliverToBoxAdapter(
+                child: Center(child: Text('Loading....')));
   }
 }
